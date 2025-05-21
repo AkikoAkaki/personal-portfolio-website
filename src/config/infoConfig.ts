@@ -3,25 +3,25 @@ export * from './education'
 export * from './career'
 
 // personal info
-export const name = 'Derek Hu'
-export const headline = 'Teacher at Shanghai Soong Ching Ling School.'
+export const name = 'Aki (Fengkai) Liu'
+export const headline = 'Computer Science and Applied Mathematics Student at University of Rochester.'
 export const introduction =
-  "Coucou Les Amis! My name is Derek Hu. I'm from Hubei and an alumnus of BUPT, UChicago, and Tsinghua. I’ve been teaching Computer Science at SCLS since 2020."
-export const email = 'tong.hu@scls-sh.org'
-export const githubUsername = 'derekhut'
+  "My name is Aki. I'm from Shanghai and is currently studying in the United States."
+export const email = 'akiliu1116@gmail.com'
+export const githubUsername = 'AkikoAkaki'
 
 // about page
-export const aboutMeHeadline = 'Who Are You and Why Should I Care?'
+export const aboutMeHeadline = 'Who Am I and Why Should You Care?'
 export const aboutParagraphs = [
-  "Coucou Les Amis! My name is Derek Hu. I'm from Hubei and an alumnus of BUPT, UChicago, and Tsinghua. I’ve been teaching Computer Science at SCLS since 2020.",
-  'Currently I am working on a new course called AI Camp, an innovative course where high school students create real-world products and startups while exploring the frontiers of AI.',
-  "I started this blog to share the insights I learn every day. Most blogs focus on education in Artificial Intelligence and general computer science, while others share the life lessons I've learned.",
+  "My name is Aki. I'm from Shanghai and is currently studying at University of Rochester. I am a Computer Science and Applied Mathematics student with a passion for technology and entrepreneurship.",
+  'Currently I am working as a full-stack software engineer and machine learning engineer for an AI company, Artisk, which is focused on revolutionizing brand design by offering AI-powered tools.',
+  "I started this blog to share the insights I learn every day. The blogs are focused on different fields, including computer science, humanity, art, and everyday thinking.",
 ]
 
 // blog
 export const blogHeadLine = "What I've thinking about."
 export const blogIntro =
-  "I've written something about AI, programming and life."
+  "I've written something about programming, humanity, art, and life."
 
 // social links
 export type SocialLinkType = {
