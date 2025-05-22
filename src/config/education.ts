@@ -19,4 +19,18 @@ export type EducationItemType = {
       start: '2023',
       end: '2027'
     },
+    {
+      school: 'Shanghai Starriver Bilingual School',
+      major: 'Middle school & high school student',
+      logo: 'college',
+      start: '2016',
+      end: '2023'
+    },
+    {
+      school: 'Shanghai Qibao Foreign Language School',
+      major: 'Primary school student',
+      logo: 'college',
+      start: '2010',
+      end: '2016'
+    },
   ]

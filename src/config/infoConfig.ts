@@ -33,14 +33,14 @@ export type SocialLinkType = {
 
 export const socialLinks: Array<SocialLinkType> = [
   {
-    name: 'Tiktok',
-    icon: 'tiktok',
-    href: 'https://www.tiktok.com/@harvard?lang=en',
+    name: 'Instagram',
+    icon: 'instagram',
+    href: 'https://www.instagram.com/__akikoakaki__/',
   },
   {
-    name: 'Bilibili',
-    icon: 'bilibili',
-    href: 'https://space.bilibili.com/349721082',
+    name: 'Github',
+    icon: 'github',
+    href: 'https://github.com/AkikoAkaki',
   },
 ]
 
