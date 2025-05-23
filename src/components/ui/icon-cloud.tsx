@@ -37,10 +37,12 @@ export const cloudProps: Omit<ICloud, "children"> = {
   },
 };
 
-export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
-  const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
-  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
-  const minContrastRatio = theme === "dark" ? 2 : 1.2;
+export const renderCustomIcon = (icon: SimpleIcon, currentAppliedTheme: string) => {
+  console.log("renderCustomIcon CALLED with actual theme:", currentAppliedTheme, "and icon:", icon.title);
+
+  const bgHex = currentAppliedTheme === "light" ? "#f3f2ef" : "#080510";
+  const fallbackHex = currentAppliedTheme === "light" ? "#969696" : "#ffffff";
+  const minContrastRatio = currentAppliedTheme === "light" ? 100 : 2;
 
   return renderSimpleIcon({
     icon,
@@ -65,19 +67,32 @@ type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
 export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
   const [data, setData] = useState<IconData | null>(null);
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
 
   useEffect(() => {
     fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
   }, [iconSlugs]);
 
   const renderedIcons = useMemo(() => {
-    if (!data) return null;
+    if (!data) {
+      console.log("IconCloud: Data is not ready yet for icons."); // <--- 添加这行
+      return null;
+    }
+
+    const currentActualTheme = resolvedTheme || theme || "light";
+    console.log("IconCloud: RECOMPUTING renderedIcons for theme:", theme);
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light"),
+      renderCustomIcon(icon, currentActualTheme),
     );
   }, [data, theme]);
+
+  console.log("IconCloud: Current theme is:", theme, "resolvedTheme=", resolvedTheme, "Rendered icons count:", renderedIcons ? renderedIcons.length : 0);
+
+  if (!renderedIcons) {
+    console.log("IconCloud: renderedIcons is null, rendering nothing for Cloud children.");
+    return null; 
+  }
 
   return (
     // @ts-ignore

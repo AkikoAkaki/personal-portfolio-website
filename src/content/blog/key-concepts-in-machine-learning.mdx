@@ -1,0 +1,100 @@
+---
+title: 'Key Concepts in Machine Learning: Evaluation and Model Behavior'
+date: '2025-05-22'
+tags: ['machine learning', 'evaluation', 'model assessment']
+description: 'An overview of fundamental machine learning concepts, including evaluation methods like Cross Validation, Confusion Matrix, ROC/AUC, and an explanation of model behaviors such as Bias and Variance.'
+---
+
+In the realm of machine learning, understanding how to evaluate models and comprehend their behavior is crucial. Let's delve into some fundamental concepts.
+
+> [!info]
+> **Learning**: The process of improving task performance by studying one's own experience (observed/perceived information) in situations where explicit programming is not feasible due to an excessive number of cases or overly complex problems.
+> - Perception → State → Action → Evaluation
+
+## Evaluation Methods
+
+How do we assess how well our machine learning models are doing? Several methods help us quantify their performance and generalization capabilities.
+
+---
+
+### Cross Validation
+
+**Cross Validation** is a technique used to assess a model's ability to generalize to new, unseen data. It involves dividing the dataset into different parts. Iteratively, one part is taken as the validation set, and the remaining parts form the training set. The model is evaluated on each validation set, and the final performance is an average of these evaluations. This helps in obtaining a more robust estimate of the model's performance.
+
+---
+
+### Confusion Matrix
+
+A **Confusion Matrix** is a table used to evaluate the performance of a classification model. It visualizes the performance by showing the counts of true positive, true negative, false positive, and false negative predictions.
+
+|                        | Predicted Positive          | Predicted Negative          |
+| :--------------------: | :-----------------------: | :-----------------------: |
+| **Actual Positive** |   TP (True Positive)      |   FN (False Negative)     |
+| **Actual Negative** |   FP (False Positive)     |   TN (True Negative)      |
+
+From the confusion matrix, several key metrics can be derived:
+
+-   **Accuracy**: The proportion of all samples that were correctly classified.
+    $$
+    \text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
+    $$
+-   **Precision (Positive Predictive Value, PPV)**: The proportion of samples predicted as positive that were actually positive.
+    $$
+    \text{Precision} = \frac{TP}{TP + FP}
+    $$
+-   **Recall (Sensitivity, True Positive Rate, TPR)**: The proportion of actual positive samples that were correctly predicted as positive.
+    $$
+    \text{Recall} = \frac{TP}{TP + FN}
+    $$
+-   **Specificity (True Negative Rate, TNR)**: The proportion of actual negative samples that were correctly predicted as negative.
+    $$
+    \text{Specificity} = \frac{TN}{TN + FP}
+    $$
+-   **F1 Score**: The harmonic mean of Precision and Recall, providing a balance between the two.
+    $$
+    \text{F1 Score} = \frac{2 \cdot \text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
+    $$
+
+---
+
+### ROC (Receiver Operating Characteristic) Curve
+
+The **ROC Curve** is a graphical plot that illustrates the diagnostic ability of a binary classification system as its discrimination threshold is varied.
+
+The X-axis represents the **False Positive Rate (FPR)**, which is $1 - \text{Specificity}$.
+The Y-axis represents the **True Positive Rate (TPR)**, which is Sensitivity or Recall.
+
+Each point on the ROC curve represents a confusion matrix for a specific threshold. A curve that is closer to the top-left corner indicates better classification performance, meaning the model has a high TPR and a low FPR.
+
+---
+
+### AUC (Area Under the Curve)
+
+The **AUC** quantifies the overall ability of the ROC curve to discriminate between positive and negative classes. It represents the area under the ROC curve.
+
+The AUC value ranges from 0 to 1:
+-   An AUC of 1 indicates a perfect classifier.
+-   An AUC of 0.5 suggests a model with no discriminative ability (equivalent to random guessing).
+-   An AUC less than 0.5 suggests the model is performing worse than random guessing.
+
+Comparing AUC values for different models can help determine which ROC curve (and thus which model) performs better.
+
+---
+
+## Model Behavior Concepts
+
+Beyond evaluation metrics, understanding concepts like bias and variance is key to diagnosing model issues.
+
+### Bias
+
+**Bias** refers to the difference between the average prediction of our model and the correct value we are trying to predict. It represents a systematic error due to the model itself not being sophisticated enough.
+
+High bias can lead to **underfitting**, where the model is too simple to capture the underlying patterns in the data effectively. It performs poorly on both the training data and unseen test data.
+
+---
+
+### Variance
+
+**Variance** refers to the variability of model prediction for a given data point when different training datasets are used. It measures how much the model's predictions would change if it were trained on a different dataset.
+
+High variance can lead to **overfitting**. This occurs when the model learns the training data too well, including its noise and specific idiosyncrasies. As a result, it performs well on the training data but poorly on new, unseen data because it fails to generalize the underlying patterns.

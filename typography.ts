@@ -170,9 +170,9 @@ export default function typographyStyles({ theme }: PluginUtils) {
           paddingLeft: theme('spacing.6'),
         },
         li: {
-          marginTop: theme('spacing.6'),
-          marginBottom: theme('spacing.6'),
-          paddingLeft: theme('spacing[3.5]'),
+          marginTop: theme('spacing.2'),
+          marginBottom: theme('spacing.2'),
+          // paddingLeft: theme('spacing[3.5]'),
         },
         'li::marker': {
           fontSize: theme('fontSize.sm')[0],
@@ -184,13 +184,19 @@ export default function typographyStyles({ theme }: PluginUtils) {
         'ul > li::marker': {
           color: 'var(--tw-prose-bullets)',
         },
-        'li :is(ol, ul)': {
-          marginTop: theme('spacing.4'),
-          marginBottom: theme('spacing.4'),
+        'ul ul, ul ol, ol ul, ol ol': { 
+          paddingLeft: theme('spacing.10'), 
+          marginTop: theme('spacing.3'),   
+          marginBottom: theme('spacing.3'),
         },
-        'li :is(li, p)': {
+        'ul ul ul, ul ul ol, ul ol ul, ul ol ol, ol ul ul, ol ul ol, ol ol ul, ol ol ol': {
+          paddingLeft: theme('spacing.14'),
           marginTop: theme('spacing.3'),
           marginBottom: theme('spacing.3'),
+        },
+        'li :is(li, p)': {
+          marginTop: theme('spacing.1'),
+          marginBottom: theme('spacing.1'),
         },
 
         // Code blocks

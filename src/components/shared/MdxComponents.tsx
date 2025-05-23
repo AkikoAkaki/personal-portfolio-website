@@ -57,13 +57,11 @@ export const mdxComponents: MDXComponents = {
   p: (props: any) => <p className="my-6 text-base opacity-80" {...props} />,
   ul: (props: any) => (
     <ul
-      className="my-6 mt-6 list-inside list-disc text-base opacity-80"
       {...props}
     />
   ),
   ol: (props: any) => (
     <ol
-      className="my-6 mt-6 list-inside list-decimal text-base opacity-80"
       {...props}
     />
   ),

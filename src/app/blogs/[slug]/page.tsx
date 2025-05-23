@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { getBlogBySlug } from '@/lib/blogs'
+import { getBlogBySlug, type BlogType } from '@/lib/blogs'
 import { getMDXContent } from '@/lib/mdx'
 import { BlogLayout } from '@/components/layout/BlogLayout'
 
@@ -28,20 +28,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPage({ params }: Props) {
-  const blog = await getBlogBySlug(params.slug)
+  const blogMeta = await getBlogBySlug(params.slug)
   
-  if (!blog) {
+  if (!blogMeta) {
     notFound()
   }
 
-  const content = await getMDXContent(params.slug)
+  const { mdxProcessedContent, frontmatter: mdxFrontmatter } = await getMDXContent(params.slug)
+  
+  const displayBlogMeta: BlogType = {
+    slug: params.slug,
+    title: (mdxFrontmatter.title as string) || blogMeta.title,
+    description: (mdxFrontmatter.description as string) || blogMeta.description,
+    date: (mdxFrontmatter.date as string) || blogMeta.date,
+    author: (mdxFrontmatter.author as string) || blogMeta.author,
+  };
 
   return (
     <BlogLayout
-        blog={blog}
+        blog={displayBlogMeta}
     >
       <div className="mt-8 prose dark:prose-invert">
-        {content}
+        {mdxProcessedContent}
       </div>
     </BlogLayout>
   )
