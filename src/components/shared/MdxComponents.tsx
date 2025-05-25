@@ -1,4 +1,5 @@
 import { type MDXComponents } from 'mdx/types'
+import { FigureWithCaption } from '../shared/FigureWithCaption'
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 
@@ -35,6 +36,7 @@ export const mdxComponents: MDXComponents = {
   Image: (props: ImageProps) => (
     <Image {...props} className="my-6 rounded-3xl" />
   ),
+  Figure: FigureWithCaption,
   a: CustomLink,
   h1: (props: any) => (
     <h1

@@ -7,11 +7,26 @@ description: 'A foundational overview of neural network units (perceptrons), Mul
 
 Neural networks are at the heart of many modern artificial intelligence applications. Let's explore some fundamental building blocks and architectures.
 
+---
+
 ## The Basic Unit: The Perceptron
 
 A **unit** (often referred to as a neuron or perceptron in simpler models) receives weighted signals from other units or inputs. It computes a weighted sum of these signals and then passes this sum through an **activation function** to produce an output.
 
 Essentially, it's a linear classifier unit equipped with an activation function.
+
+<Figure
+  src="/images/and-gate-perceptron.png"
+  alt="Components of an AND Gate Perceptron with Step Function"
+  width={650}
+  height={400}
+  caption={<>
+    Figure 1: Components of an AND Gate Perceptron with Step Function. Reference from：
+    <a href="https://muneebsa.medium.com/deep-learning-101-lesson-7-perceptron-f6a698d81be8" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 hover:underline">
+      Deep Learning 101: Lesson 7— Perceptron
+    </a>
+  </>}
+/>
 
 ---
 
@@ -20,6 +35,30 @@ Essentially, it's a linear classifier unit equipped with an activation function.
 Multilayer Perceptrons are a class of feedforward artificial neural networks. They consist of at least three layers of nodes.
 
 ### Structure
+
+<Figure
+  src="/images/mlp-feedforward-neural-network.png"
+  alt="Illustrative example of Multilayer perceptron (MLP), a Feedforward neural network"
+  width={700}
+  height={450} 
+  caption={<>
+    Illustrative example of Multilayer perceptron (MLP), a feedforward neural network.
+    <br />
+    <span className="text-xs mt-1 inline-block">
+      Source: What is a Multilayer Perceptron (MLP) or aFeedforward Neural Network (FNN)?
+      <a 
+        href="https://aiml.com/what-is-a-multilayer-perceptron-mlp/" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-primary hover:text-primary/80 hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
+      >
+        What is a Multilayer Perceptron (MLP) or a Feedforward Neural Network (FNN)?
+      </a>
+      {' '}
+      (AIML.com)
+    </span>
+  </>}
+/>
 
 -   **Input Layer**: Receives the initial data or features.
 -   **Hidden Layer(s)**: One or more layers between the input and output layers. These layers perform intermediate computations and enable the network to learn complex patterns.
@@ -48,6 +87,47 @@ The Backpropagation Algorithm is the standard method for training MLPs. It's use
 Convolutional Neural Networks are a specialized type of neural network designed to process data with a grid-like topology, such as images. They are highly effective for tasks like image recognition, object detection, and image segmentation.
 
 ### Structure
+
+<Figure
+  src="/images/cnn-architecture-diagram.png"
+  alt="Schematic diagram of a basic CNN architecture"
+  width={700} 
+  height={350} 
+  caption={<>
+    Figure 1. Schematic diagram of a basic convolutional neural network (CNN) architecture.
+    <br />
+    <span className="text-xs mt-1 inline-block">
+      From: Phung, V.H.; Rhee, E.J. A Deep Learning Approach for Classification of Cloud Image Patches on Small Datasets.
+      {' '}
+      <em>J. Inf. Commun. Converg. Eng.</em>
+      {' '}
+      <b>2018</b>,
+      {' '}
+      <em>16</em>,
+      {' '}
+      173–178.
+      {' ('}
+      <a 
+        href="https://scholar.google.com/scholar_lookup?title=A+Deep+Learning+Approach+for+Classification+of+Cloud+Image+Patches+on+Small+Datasets&author=Phung,+V.H.&author=Rhee,+E.J.&publication_year=2018&journal=J.+Inf.+Commun.+Converg.+Eng.&volume=16&pages=173%E2%80%93178&doi=10.6109/jicce.2018.16.3.173" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-primary hover:text-primary/80 hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
+      >
+        Google Scholar
+      </a>
+      {'; '}
+      <a 
+        href="https://koreascience.or.kr/article/JAKO201831854885763.page" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-primary hover:text-primary/80 hover:underline focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
+      >
+        CrossRef
+      </a>
+      {')'}
+    </span>
+  </>}
+/>
 
 CNNs typically consist of several types of layers:
 
