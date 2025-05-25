@@ -51,27 +51,27 @@ Convolutional Neural Networks are a specialized type of neural network designed 
 
 CNNs typically consist of several types of layers:
 
--   **Convolutional Layers (CONV)**
-    -   Connected to a local region of the input, known as the **receptive field**.
-    -   Employ a set of learnable **filters (or kernels)**.
-        -   Each filter slides (or convolves) across the input data. The **convolution operation** involves computing the dot product between the filter weights and the input values within the receptive field, and then adding a **bias term**.
-        -   This process detects specific local features (e.g., edges, textures, motifs) and produces a 2D **feature map (or activation map)** for each filter.
+- **Convolutional Layers (CONV)**
+  - Connected to a local region of the input, known as the **receptive field**.
+  - Employ a set of learnable **filters (or kernels)**.
+    - Each filter slides (or convolves) across the input data. The **convolution operation** involves computing the dot product between the filter weights and the input values within the receptive field, and then adding a **bias term**.
+    - This process detects specific local features (e.g., edges, textures, motifs) and produces a 2D **feature map (or activation map)** for each filter.
 
--   **Activation Layer**
-    -   Applies an element-wise non-linear transformation to the output feature maps from the convolutional layer.
-    -   Commonly used activation functions include:
-        -   **ReLU (Rectified Linear Unit)**: $\text{ReLU}(x) = \max(0, x)$. It introduces non-linearity and helps with issues like vanishing gradients.
-        -   **Sigmoid Function**: $\sigma(z) = \frac{1}{1 + e^{-z}}$. Often used in older CNNs or for binary classification output layers.
+- **Activation Layer**
+  - Applies an element-wise non-linear transformation to the output feature maps from the convolutional layer.
+  - Commonly used activation functions include:
+    - **ReLU (Rectified Linear Unit)**: $\text{ReLU}(x) = \max(0, x)$. It introduces non-linearity and helps with issues like vanishing gradients.
+    - **Sigmoid Function**: $\sigma(z) = \frac{1}{1 + e^{-z}}$. Often used in older CNNs or for binary classification output layers.
 
--   **Pooling Layers (POOL)**
-    -   Perform **down-sampling** on the feature maps, reducing their spatial dimensions (width and height) while keeping the depth (number of feature maps) unchanged.
-    -   Benefits:
-        -   Reduces the computational load and the number of parameters in subsequent layers.
-        -   Provides a degree of translation invariance (small shifts in the input don't drastically change the output).
-        -   Helps prevent overfitting.
-    -   **Max Pooling** is a common type: A window slides over the input feature map, and for each window, the maximum value is selected as the output.
+- **Pooling Layers (POOL)**
+  - Perform **down-sampling** on the feature maps, reducing their spatial dimensions (width and height) while keeping the depth (number of feature maps) unchanged.
+  - Benefits:
+    - Reduces the computational load and the number of parameters in subsequent layers.
+    - Provides a degree of translation invariance (small shifts in the input don't drastically change the output).
+    - Helps prevent overfitting.
+  - **Max Pooling** is a common type: A window slides over the input feature map, and for each window, the maximum value is selected as the output.
 
--   **Fully Connected Layers (FC)**
-    -   These layers typically form the final part of a CNN.
-    -   Neurons in a fully connected layer have connections to all activations in the previous layer, similar to traditional MLPs.
-    -   They integrate the high-level features learned by the preceding convolutional and pooling layers to perform the final classification or regression task.
+- **Fully Connected Layers (FC)**
+  - These layers typically form the final part of a CNN.
+  - Neurons in a fully connected layer have connections to all activations in the previous layer, similar to traditional MLPs.
+  - They integrate the high-level features learned by the preceding convolutional and pooling layers to perform the final classification or regression task.

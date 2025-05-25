@@ -65,11 +65,19 @@ export const activitiesIntro = "Personal interests and community contributions."
 
 export const activities: Array<ActivityItemType> = [
   {
-    name: 'Python Workshop',
+    name: 'Graphic Designer',
     description:
-      'Teaching basic Python programming concepts to beginners. Covering variables, control flow, and functions.',
-    date: '2024-02-24',
-    location: 'Shanghai',
-    link: 'https://example.com/python-workshop',
+      'Manages and executes visual design and promotion for the amateur band "The Suckers."（口乐队） Responsibilities include creating promotional materials, designing posters, and developing the band\'s overall visual identity.',
+    date: '2025-01-16',
+    location: 'Rochester, New York',
+    link: 'https://www.instagram.com/the_sucker.s/',
   },
-]
+  {
+    name: 'Drummer',
+    description:
+      'Performs as the drummer for the amateur band "The Suckers,"（口乐队） contributing to the band\'s musical arrangements and live performances.',
+    date: '2025-01-16',
+    location: 'Rochester, New York',
+    link: 'https://www.instagram.com/the_sucker.s/',
+  },
+];
